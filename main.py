@@ -1,16 +1,21 @@
 import os
 from openai import OpenAI
-from dotenv import load_dotenv
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+import uvicorn
 
-# Load environment variables from .env file
-load_dotenv()
+app = FastAPI()
+
+class PromptRequest(BaseModel):
+    prompt: str
+    model: str = "gpt-3.5-turbo"
 
 def ask_gpt(prompt, model="gpt-3.5-turbo"):
     """
     Send a prompt to OpenAI's API and return the response.
     
     Args:
-        prompt: The text prompt to send to the API
+        prompt: The text prompt to send to the API. e.g. "Hi there, you on the table. I wonder if you'd mind taking a brief survey? Five questions."
         model: The model to use (default: gpt-3.5-turbo)
         
     Returns:
@@ -25,7 +30,7 @@ def ask_gpt(prompt, model="gpt-3.5-turbo"):
     # Map model names to actual OpenAI model identifiers
     model_map = {
         "gpt-3.5-turbo": "gpt-3.5-turbo",
-        "o1-mini": "gpt-4o-mini"
+        "o1-mini": "o1-mini"
     }
     
     # Use the mapped model name or the original if not in the map
@@ -45,8 +50,16 @@ def ask_gpt(prompt, model="gpt-3.5-turbo"):
     except Exception as e:
         return f"[ERROR: {str(e)}]"
 
-# For testing purposes
+@app.post("/ask")
+async def handle_ask(request: PromptRequest):
+    response = ask_gpt(request.prompt, request.model)
+    return {"response": response}
+
+@app.get("/")
+async def home():
+    return {"message": "OpenAI API Service is running. Use POST /ask to query."}
+
+# For local testing and Render deployment
 if __name__ == "__main__":
-    # Example usage
-    test_prompt = "Say hello world"
-    print(ask_gpt(test_prompt))
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
