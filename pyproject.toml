@@ -1,5 +1,5 @@
 [project]
-name = "peterdresslar-asucas-f2025"
+name = "peterdresslar-asucss-f2025"
 version = "0.1.0"
 description = "Just a school project"
 readme = "README.md"
@@ -10,23 +10,5 @@ dependencies = [
     "openai>=1.65.3",
     "pydantic>=2.10.6",
     "uvicorn>=0.34.0",
+    "streamlit>=1.39.0",
 ]
-
-[tool.poetry]
-name = "openai-api-service"
-version = "0.1.0"
-description = "A FastAPI service for OpenAI API calls"
-authors = ["Peter Dresslar <peterdresslar@gmail.com>"]
-
-[tool.poetry.dependencies]
-python = "^3.12"
-fastapi = "^0.115.11"
-uvicorn = "^0.34.0"
-openai = "^1.65.3"
-python-dotenv = "^1.0.0"
-
-[tool.poetry.dev-dependencies]
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
