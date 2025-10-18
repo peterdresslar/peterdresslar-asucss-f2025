@@ -40,9 +40,10 @@ st.title("Research Interests")
 
 st.markdown(
     """
-I build and study human-aligned AI systems using agent-based models, LLM evaluation, and 
-research-ready software tooling. At ASU's Research Software Engineering group, I collaborate 
-on lightweight platforms that help researchers ship prototypes quickly and reproducibly.
+I study the causal roots of complex phenomena and the mathematical formalisms that describe them. Of particular interest to me is
+ the degree to which large language models can change and possibly accelerate our pursuit of identifying 
+universal principles across systems—from biological regulation to social dynamics. I am also a fan of software engineering practices and tools
+that make scientific investigation more accessible and reproducible.
 """
 )
 
