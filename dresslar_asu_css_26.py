@@ -52,15 +52,15 @@ st.markdown("### Current Projects")
 projects = [
     {
         "title": "Do Android Wolves Dream of Artificial Sheep",
-        "description": "LLM-driven agents in simulated ecologies using predator–prey metaphors to study cooperation, deception, and resource dynamics.",
+        "description": "LLM-driven agents in simulated ecologies using predator–prey metaphors to study cooperation, deception, and resource dynamics. With Professor J. M. Applegate.",
     },
     {
         "title": "HPA-Axis-Simulator",
-        "description": "With Alon Lab. Browser-friendly simulator of hypothalamic–pituitary–adrenal axis dynamics and stress reactivity for educational use. [Try simulator](https://hpamodel-sim-fast-slow.streamlit.app/)",
+        "description": "Browser-friendly simulator of hypothalamic–pituitary–adrenal axis dynamics and stress reactivity for educational use. Based on work by the Uri Alon Lab at Weizmann Institute of Science. [Try simulator](https://hpamodel-sim-fast-slow.streamlit.app/)",
     },
     {
         "title": "Easy Evolvability",
-        "description": "Just an idea. for now.",
+        "description": "Autocatalytic reactions. Just an idea. for now.",
     },
     {
         "title": "ASU RSE Streamlit Hosting Service",
