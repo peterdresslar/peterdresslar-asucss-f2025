@@ -68,7 +68,7 @@ projects = [
     },
     {
         "title": "1-Dimensional Game of Life",
-        "description": "Minimalist cellular automaton exploring 1D Life rules as a teaching aid for emergence.",
+        "description": "Minimalist cellular automaton exploring 1D Life rules as a teaching aid for emergence. [View app](https://game-of-life-1d.streamlit.app/)",
     },
     {
         "title": "Cognitive Bias in LLMs for ABM",
