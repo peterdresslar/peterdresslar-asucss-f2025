@@ -52,7 +52,7 @@ st.markdown("### Current Projects")
 projects = [
     {
         "title": "Do Android Wolves Dream of Artificial Sheep",
-        "description": "LLM-driven agents in simulated ecologies using predator–prey metaphors to study cooperation, deception, and resource dynamics. With Professor J. M. Applegate.",
+        "description": "LLM-driven agents in simulated ecologies using predator–prey metaphors to study cooperation, deception, and resource dynamics. With Professor J. M. Applegate. [Dynamics demo](https://lotka-volterra-allee-with-control.streamlit.app/)",
     },
     {
         "title": "HPA-Axis-Simulator",
