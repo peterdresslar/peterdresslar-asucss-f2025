@@ -45,3 +45,12 @@ The experiment demonstrates how newer AI models (GPT-4o mini) are significantly 
 ## Note
 
 This is part of a personal statement for a Complex Systems Science degree application, demonstrating the intersection of AI and complex systems.
+
+## Organization
+
+```bash
+.                 # Root
+├── app/          # Streamlit app
+├── docs/         # Grad school entrance application notebook, note code requires a running service.
+└── src/          # The service code for the notebook, currently no longer deployed anywhere. Includes some unfinished ideas.
+```

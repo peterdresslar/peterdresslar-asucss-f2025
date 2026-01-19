@@ -6,8 +6,58 @@ so they can be included in the notebook without requiring API keys.
 
 import json
 import os
-from main import ask_gpt
-from rule110 import rule110
+import numpy as np
+from src.idea_stub import ask_gpt
+
+rule110_codex = {
+    (0, 0, 0): 0,
+    (0, 0, 1): 1,
+    (0, 1, 0): 1,
+    (0, 1, 1): 0,
+    (1, 0, 0): 1,
+    (1, 0, 1): 1,
+    (1, 1, 0): 1,
+    (1, 1, 1): 0,
+}
+def rule110(neighborhood):
+    """Compute the next state of the Rule 110 cellular automaton."""
+    return rule110_codex[neighborhood]
+
+def run_rule110(initial_state, steps):
+    """Compute the next state of the Rule 110 cellular automaton.
+
+    Args:
+        initial_state: list of 0s and 1s
+        steps: number of steps to run
+
+    Returns:
+        list of states, each a list of 0s and 1s: including the initial state
+
+    Note:
+        With rule 110, the we know that the neighborhood has 3 cells and thus 8 (2^3) possible configurations.
+        In fact, the name rule 110 when collapsed to binary is 01101110, which gives us a zero-indexed"codex" to match a 
+        specific neighborhood pattern to a specific ruling. This means that with any state array of 0s and 1s, we can do some
+        clever things with binary arithmetic to compute the next state.
+        https://mathworld.wolfram.com/Rule110.html
+    """
+    # validate initial state and throw error if it contains anything other than 0s and 1s
+    if initial_state is None or not isinstance(initial_state, list):
+        raise ValueError("Initial state must be a non-empty list")
+    if any(x not in [0, 1] for x in initial_state):
+        raise ValueError("Initial state must contain only 0s and 1s")
+
+    states = [initial_state]
+    for _ in range(steps):
+        previous_state = states[-1]
+        new_state = []
+        for i, cell in enumerate(previous_state):
+            left_neighbor = previous_state[i-1] if i > 0 else 0
+            right_neighbor = previous_state[i+1] if i < len(previous_state) - 1 else 0
+            neighborhood = (left_neighbor, cell, right_neighbor)
+            new_state.append(rule110[neighborhood])
+            
+        states.append(initial_state)
+    return states
 
 def generate_correct_results():
     """Generate the correct Rule 110 results and save to a file."""
@@ -15,7 +65,7 @@ def generate_correct_results():
     initial_state = [0] * 15 + [1]
     
     # Compute 10 steps
-    states = rule110(initial_state, 10)
+    states = run_rule110(initial_state, 10)
     
     # Convert to strings for easier display
     string_states = []
