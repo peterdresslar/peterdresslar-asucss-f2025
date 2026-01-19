@@ -1,35 +1,31 @@
-# Rule 110 AI Experiment
+# Peter Dresslar ASU Complex Systems Science 2025-2026
 
-This repository contains a Jupyter notebook that demonstrates how AI models have evolved in their ability to emulate cellular automata, specifically Rule 110.
+This repository contains some artifacts from my time in Arizona State University's Complex Systems Science master's degree program. There is a notebook that I submitted as part of my application (possibly not giving my candidacy a boost: but I was accepted nonetheless.) 
 
-## Background
+I also have a [Streamlit](streamlit.io) app that powers a compact web application and serves as a sort of "portfolio" as I progress through the program.
 
-Rule 110 is a one-dimensional cellular automaton that has been proven to be Turing complete. This experiment tests how well different AI models (GPT-3.5 and GPT-4o mini) can "think through" the steps of Rule 110 computation.
+## Background on the Notebook
 
-## Setup
+Rule 110 is a one-dimensional cellular automaton that has been proven to be Turing complete. The included "experiment" tests how well different AI models (GPT-3.5 and GPT-4o mini) can "think through" the steps of Rule 110 computation, in an attempt to tell a story. In retrospect this would have been a far better Streamlit app itself---perhaps this is an idea for a future enhancement.
+
+## Setup for the notebook
 
 1. Clone this repository
+
 2. Install the required dependencies:
-   ```
+   ```bash
    pip install -r requirements.txt
    ```
 3. Create a `.env` file in the root directory with your OpenAI API key:
-   ```
+
+   ```bash
    OPENAI_API_KEY=your_api_key_here
    ```
 4. Run the Jupyter notebook:
-   ```
+
+   ```bash
    jupyter notebook research-statement.ipynb
    ```
-
-## Files
-
-- `research-statement.ipynb`: The main notebook containing the experiment and analysis
-- `main.py`: Helper functions for making API calls to OpenAI
-- `requirements.txt`: Python dependencies
-- `.env`: (You need to create this) Contains your OpenAI API key
-
-## How It Works
 
 The notebook:
 1. Implements Rule 110 in Python for reference
@@ -38,13 +34,22 @@ The notebook:
 4. Compares the AI outputs to the correct implementation
 5. Analyzes the results
 
-## Results
+## Setup for the Streamlit app
 
-The experiment demonstrates how newer AI models (GPT-4o mini) are significantly better at emulating complex computational processes like Rule 110 compared to earlier models (GPT-3.5).
+It is so easy to run the Streamlit app with `uv`. Maybe try it! If you have `uv` installed, you can:
 
-## Note
+```sh
+uv venv
+source .venv/bin/activate  # on Windows, activating the venv looks more like .\.venv\Scripts\activate
+uv sync
+uv run streamlit run app/portfolio.py
+```
 
-This is part of a personal statement for a Complex Systems Science degree application, demonstrating the intersection of AI and complex systems.
+If you [do not have uv installed](https://docs.astral.sh/uv)...
+
+## The files in src/
+
+This was the original service that I hosted for a while to support API calls to LLMs from my notebook. It worked quite nicely, but today I would probably take a different path. Consider the code in src/ to be work-in-progress (for some value of in-progress!)
 
 ## Organization
 
