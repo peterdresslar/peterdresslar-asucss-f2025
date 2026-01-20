@@ -2,7 +2,7 @@
 
 This repository contains some artifacts from my time in Arizona State University's Complex Systems Science master's degree program. There is a notebook that I submitted as part of my application (possibly not giving my candidacy a boost: but I was accepted nonetheless.) 
 
-I also have a [Streamlit](streamlit.io) app that powers a compact web application and serves as a sort of "portfolio" as I progress through the program.
+I also have a [Streamlit](https://streamlit.io) app that powers a compact web application and serves as a sort of "portfolio" as I progress through the program.
 
 ## Background on the Notebook
 
@@ -45,7 +45,7 @@ uv sync
 uv run streamlit run app/portfolio.py
 ```
 
-If you [do not have uv installed](https://docs.astral.sh/uv)...
+If you do not have uv installed, and are interested in more information, see the docs, [here](https://docs.astral.sh/uv).
 
 ## The files in src/
 
