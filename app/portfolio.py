@@ -17,7 +17,6 @@ st.sidebar.markdown(
     """
 - MS Candidate in Complex Systems Science at Arizona State University. (expected graduation: summer 2026)
 - Program Manager for Technology Modernization at American Samoa Community College.
-- Maintainer of [Zotero MCP](https://github.com/54yyyu/zotero-mcp) — connects Zotero research libraries with AI assistants via Model Context Protocol.
 
 Interests: LLMs & alignment, agent-based models, computational social science, 
 biologically inspired computation, and research tooling.
@@ -40,10 +39,11 @@ st.title("Research Interests")
 
 st.markdown(
     """
-I study the causal roots of complex phenomena and the mathematical formalisms that describe them. Of particular interest to me is
- the degree to which large language models can change and possibly accelerate our pursuit of identifying 
-universal principles across systems—from biological regulation to social dynamics. I am also a fan of software engineering practices and tools
-that make scientific investigation more accessible and reproducible.
+    I study the universal constraints that govern complex systems—from biological regulation to social dynamics. 
+    My work focuses on bridging the gap between abstract theory and reproducible science, using Large Language Models 
+    to accelerate how we identify universal principles. I am equally passionate about the "how" of research, building 
+    software tools and engineering practices that make scientific investigation more transparent and accessible.
+    
 """
 )
 
@@ -51,20 +51,8 @@ st.markdown("### Current Projects")
 
 projects = [
     {
-        "title": "Do Android Wolves Dream of Artificial Sheep",
-        "description": "LLM-driven agents in simulated ecologies using predator–prey metaphors to study cooperation, deception, and resource dynamics. With Professor J. M. Applegate. [Dynamics demo](https://lotka-volterra-allee-with-control.streamlit.app/)",
-    },
-    {
         "title": "HPA-Axis-Simulator",
         "description": "Browser-friendly simulator of hypothalamic–pituitary–adrenal axis dynamics and stress reactivity for educational use. Based on work by the Uri Alon Lab at Weizmann Institute of Science. [Try simulator](https://hpamodel-sim-fast-slow.streamlit.app/)",
-    },
-    {
-        "title": "Easy Evolvability",
-        "description": "Autocatalytic reactions. Just an idea. for now.",
-    },
-    {
-        "title": "ASU RSE Streamlit Hosting Service",
-        "description": "Conceptualizing internal Streamlit hosting at ASU focused on simplicity, governance, and researcher experience. [View service](https://app-dot-asu-dot-edu.streamlit.app/)",
     },
     {
         "title": "1-Dimensional Game of Life",
